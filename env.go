@@ -8,16 +8,20 @@ import (
 // Load reads the .env file in the directory from which its called and loads the variables into ENV
 // for this process.
 //
-// note: Load does not override an env variable that already exists.
+// note: Load does not override any env variable that already exists.
 func Load() error {
 	return loadFile(".env")
 }
 
-// Read
+// Read reads the .env file in the directory from which it is called from and returns a map of key,
+// value pairs where key is the variable and value is the value to be assigned to the variable.
+//
+// This is if the user needs to read a .env file and doesnt want to store it in ENV
 func Read() (map[string]string, error) {
 	return readFile(".env")
 }
 
+// reads and loads variables in ENV
 func loadFile(filename string) error {
 	envMap, err := readFile(filename)
 	if err != nil {
@@ -40,10 +44,11 @@ func loadFile(filename string) error {
 	return nil
 }
 
-func readFile(filename string) (envMap map[string]string, err error) {
+// reads key, value pairs from a file into a map
+func readFile(filename string) (map[string]string, error) {
 	file, err := os.Open(filename)
 	if err != nil {
-		return
+		return nil, err
 	}
 	defer file.Close()
 
