@@ -54,6 +54,7 @@ func main() {
 ```
 
  *IMPORTNAT*
+
 This implementation only accepts variable names that are similar to the c standard except that they
 cannot start with an underscore.
 
@@ -62,8 +63,7 @@ Therefore keys have the form:
 variable : letter [letter | digit | "_" ]*
 letter : [a-z | A-Z]
 digit : [0-9]
-```[letter (0 or more alphanumeric or underscore)
-
+```
 
 ## Contributing
 Currently not adding any features.
