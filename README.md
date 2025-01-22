@@ -1,4 +1,4 @@
-# **Env** [![Go Reference](https://pkg.go.dev/badge/github.com/yisroelshulman/env.svg)](https://pkg.go.dev/github.com/yisroelshulman/env)
+# **env** [![Go Reference](https://pkg.go.dev/badge/github.com/yisroelshulman/env.svg)](https://pkg.go.dev/github.com/yisroelshulman/env)
 
 A trimmed down Go library of the [godotenv](https://github.com/joho/godotenv) project.
 
